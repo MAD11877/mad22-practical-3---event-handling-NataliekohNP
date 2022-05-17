@@ -2,18 +2,29 @@ package sg.edu.np.mad.madpractical2_nataliekoh;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "Main Activity";
     User user = new User();
-
+    public String username;
 
     private Boolean follow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_main);
+        Intent receiving = getIntent();
+        username = receiving.getStringExtra("Username");
+        Log.v(TAG, receiving.toString());
+        TextView username2 = findViewById(R.id.Username);
+        username2.setText( "MAD " + username);
+
         user.setFollowed(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
                 if(follow == true){
                     mybutton.setText("Unfollow");
                     follow = false;
+                    Toast toasttext = Toast.makeText(getApplicationContext(), "Followed", Toast.LENGTH_SHORT);
+                    toasttext.show();
+
+
                 }
                 else{
 
