@@ -1,4 +1,5 @@
-package sg.edu.np.mad.madpractical2_nataliekoh;
+package sg.edu.np.mad.madtutorial3_natalie;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,16 +19,16 @@ public class MainActivity extends AppCompatActivity {
     private Boolean follow;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_main);
-        Intent receiving = getIntent();
-        username = receiving.getStringExtra("Username");
-        Log.v(TAG, receiving.toString());
-        TextView username2 = findViewById(R.id.Username);
-        username2.setText( "MAD " + username);
-
         user.setFollowed(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent receiving = getIntent();
+        username = receiving.getStringExtra("Username");
+        Log.v(TAG, username.toString());
+        TextView username2 = findViewById(R.id.Username);
+        username2.setText("Mad " + username);
+
+
         follow = user.getFollowed();
         Button mybutton = findViewById(R.id.button);
         if(follow){

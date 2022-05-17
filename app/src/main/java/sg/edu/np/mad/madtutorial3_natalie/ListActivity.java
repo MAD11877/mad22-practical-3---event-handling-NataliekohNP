@@ -1,4 +1,4 @@
-package sg.edu.np.mad.madpractical2_nataliekoh;
+package sg.edu.np.mad.madtutorial3_natalie;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
+    private static final String TAG = "List Activity";
     private int randomOTP(){
         Random ran = new Random();
         int value = ran.nextInt(10000000);

@@ -1,4 +1,4 @@
-package sg.edu.np.mad.madpractical2_nataliekoh;
+package sg.edu.np.mad.madtutorial3_natalie;
 
 public class User {
     private String name;
